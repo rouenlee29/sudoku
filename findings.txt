@@ -1,0 +1,34 @@
+What determines a sudoku board's difficulty?
+
+In my opinion, it is determined by the number of moves required to obtain a solution. 
+
+The number of moves correlates positively with the number of possibilities a sudoku player has to explore before arriving at a solution. 
+
+The more the number of moves, the more the possibilities, the harder it is to solve the puzzle. 
+
+To track the number of moves, I placed a "moves" counter before we invoke function "make_move".
+
+The "moves" variable is passed into the "solve_board" function as a reference variable. This is because:
+
+1. I want the "solve_board" function to modify the variable, and
+2. The "solve_board" function cannot output the "moves" variable --the function is required to output a boolean.
+
+Let's now try to solve some puzzles, and track the number of moves made before arriving a solution, if any. 
+
+The number of moves required to solve the board in "easy.dat" is 19,337.
+
+The number of moves required to solve the boardin "medium.dat" is 140,743, approximately 7 times more than the easy board.
+
+Let's assume the name of the data files indicates the difficulty of the sudoku boards. 
+
+If this assumption is correct, then the number of moves is a reliable indicator of a board's difficulty. 
+
+Now let's solve the mystery boards.
+
+Solving puzzle in mystery1.dat is successful, and requires 3,793,687 moves. This is the board that is "extremely hard".
+
+Solving puzzle in mystery2.dat failed after 103,797 moves. This is the board that is impossible to solve.
+
+Solving puzzle in mystery3.dat is successful, and requires 126,954 moves. This is the board that is "hard".
+
+
